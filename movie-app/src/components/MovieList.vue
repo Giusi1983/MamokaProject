@@ -1,27 +1,39 @@
 <template>
-  <div class="Movie"></div>
+  <div class="movielist">
+    <div class="movie-list">
+      <h1>hi</h1>
+      <div v-for="movie in movies" :key="movie.id" class="movie-table">
+        <h2>{{ movie.name }}</h2>
+        <p>{{ movie.description }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import { useRouter } from "vue-router";
+
 export default {
   name: "MovieList",
+  setup() {
+    const router = useRouter();
+
+    const token = localStorage.getItem("authToken");
+
+    if (!token) {
+      router.push({ name: "Login" });
+    }
+  },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.movie-table {
+  border: 1px solid #ddd;
+  padding: 1rem;
 }
 </style>

@@ -1,23 +1,17 @@
 <template>
   <NavBar />
-  <Login />
-  <MovieList />
-  <EditorMovie />
+  <RouterView></RouterView>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
-import MovieList from "./components/MovieList.vue";
-import EditorMovie from "./components/EditorMovie.vue";
-import Login from "./components/Login.vue";
+// import Login from "./components/Login.vue";
 
 export default {
   name: "App",
   components: {
     NavBar,
-    Login,
-    MovieList,
-    EditorMovie,
+    // Login,
   },
 };
 </script>
