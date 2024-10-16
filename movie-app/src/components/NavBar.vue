@@ -2,7 +2,8 @@
   <nav class="navbar">
     <div class="navbar-brand"></div>
     <ul class="navbar-menu">
-      <li><router-link to="/">MovieList</router-link></li>
+      <li><router-link to="/">Login</router-link></li>
+      <li><router-link to="/movieList">MovieList</router-link></li>
       <li><router-link to="/EditorMovie">Editor</router-link></li>
     </ul>
   </nav>

@@ -1,14 +1,10 @@
 <template>
-  <div class="Editor">
-  </div>
+  <div class="Editor"></div>
 </template>
 
 <script>
 export default {
   name: "EditorMovie",
-  props: {
-    msg: String,
-  },
 };
 </script>
 

@@ -1,15 +1,10 @@
 <template>
-  <div class="Movie">
-    <h1>{{ msg }}</h1>
-  </div>
+  <div class="Movie"></div>
 </template>
 
 <script>
 export default {
-  name: "EditorMovie",
-  props: {
-    msg: String,
-  },
+  name: "MovieList",
 };
 </script>
 

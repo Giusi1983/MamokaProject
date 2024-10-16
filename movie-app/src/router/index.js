@@ -1,15 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
+import Login from "../components/Login";
 import MovieList from "../components/MovieList.vue";
 import EditorMovie from "../components/EditorMovie.vue";
 
 const routes = [
   {
     path: "/",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/movieList",
     name: "MovieList",
     component: MovieList,
   },
   {
-    path: "/editor/:id",
+    path: "/editorMovie",
     name: "EditorMovie",
     component: EditorMovie,
   },
