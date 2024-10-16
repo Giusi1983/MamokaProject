@@ -11,20 +11,35 @@
 </template>
 
 <script>
-import { useRouter } from "vue-router";
+// import { useRouter } from "vue-router";
+// import { ref, onMounted } from "vue";
+// import axios from "axios";
+// import { useStore } from "vuex";
 
 export default {
   name: "MovieList",
-  setup() {
-    const router = useRouter();
+  // setup() {
+  //   const router = useRouter();
+  //   const movies = ref([]);
+  //   const token = localStorage.getItem("authToken");
 
-    const token = localStorage.getItem("authToken");
+  //   if (!token) {
+  //     router.push({ name: "Login" });
+  //   }
 
-    if (!token) {
-      router.push({ name: "Login" });
-    }
-  },
+  // },
 };
+
+//     const getMovies = async => {
+//       try {
+//         const response = await axios.get('https://kamaji2.dev.netbuilder.it/00900000/_categories'), {
+//           headers: {
+//             Authorization: `Bearer ${token}`,
+//           }
+//     }
+//     movies.value = response.data;
+//   }
+// };
 </script>
 <style scoped>
 .movie-list {
