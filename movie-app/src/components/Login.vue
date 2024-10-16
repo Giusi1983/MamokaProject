@@ -8,11 +8,10 @@
       </div>
       <div>
         <label for="password">Password</label>
-        <input v-model="password" id="password" type="text" required />
+        <input v-model="password" id="password" type="password" required />
       </div>
       <button type="submit">Login</button>
     </form>
-    <!-- <p v-if="errorMessage" class="error">{{ errorMessage }}</p> -->
   </div>
 </template>
 
@@ -26,7 +25,6 @@ export default {
   setup() {
     const username = ref("");
     const password = ref("");
-    // const errorMessage = ref("");
 
     const router = useRouter();
     let response;
@@ -46,24 +44,21 @@ export default {
             },
           }
         );
+
+        console.log("API Response:", response.data);
+        const token = response.data.token;
+        if (token) localStorage.setItem("authToken", token);
+        console.log("Login successful, token stored", token);
+        router.push({ name: "MovieList" });
       } catch (e) {
         console.error(e);
       }
-      console.log(response);
-
-      if (username.value === "user" && password.value === "password") {
-        router.push({ name: "MovieList" });
-      }
-      // else {
-      //   this.errorMessage = "Credenziali errate!";
-      // }
     };
 
     return {
       handleLogin,
       username,
       password,
-      // errorMessage,
       router,
     };
   },
