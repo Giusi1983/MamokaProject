@@ -5,6 +5,8 @@
 
 <script>
 import NavBar from "./components/NavBar.vue";
+import "./assets/main.css";
+
 // import Login from "./components/Login.vue";
 
 export default {

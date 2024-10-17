@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm min-w-full">
+  <div class="flex items-center justify-center min-h-screen max-w-xs mx-auto">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-xs min-w-full">
       <h1 class="text-2xl font-bold mb-4 text-center">Login</h1>
       <form @submit.prevent="handleLogin">
         <div class="mb-4">
@@ -89,17 +89,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.login-container {
-  max-width: 300px;
-  border: 1px solid gray;
-  margin: 50px auto;
-}
-
-#username,
-#password {
-  margin-left: 10px;
-}
-</style>
