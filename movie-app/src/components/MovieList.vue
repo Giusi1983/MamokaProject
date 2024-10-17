@@ -49,7 +49,7 @@ export default {
     const getMovies = async () => {
       try {
         const response = await axios.get(
-          "https://kamaji2.dev.netbuilder.it/00900000/_categories"
+          "https://kamaji2.dev.netbuilder.it/00900000/movies"
         );
         movies.value = response.data;
       } catch (error) {
