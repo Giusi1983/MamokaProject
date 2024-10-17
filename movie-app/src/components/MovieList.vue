@@ -1,11 +1,19 @@
 <template>
-  <div class="movielist">
-    <div class="movie-list">
-      <h1>hi</h1>
-      <div v-for="movie in movies" :key="movie.id" class="movie-table">
-        <h2>{{ movie.name }}</h2>
-        <p>{{ movie.description }}</p>
-      </div>
+  <div class="container mx-aut0 p-4">
+    <h1 class="text-3xl font-bold underline mb-4">My Movies Library</h1>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200">
+        <thead>
+          <tr class="bg-gray-100 border-b border-gray-200">
+            <th class="px-4 py-2 border">ID</th>
+            <th class="px-4 py-2 border">Year</th>
+            <th class="px-4 py-2 border">Title</th>
+            <th class="px-4 py-2 border">Category</th>
+            <th class="px-4 py-2 border">Available</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
   </div>
 </template>
