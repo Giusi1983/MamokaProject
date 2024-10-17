@@ -12,43 +12,61 @@
             <th class="px-4 py-2 border">Available</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <tr
+            v-for="(movie, index) in movies"
+            :key="index"
+            class="hover:bg-gray-50"
+          >
+            <td class="px-4 py-2 border">{{ movie.id }}</td>
+            <td class="px-4 py-2 border">{{ movie.year }}</td>
+            <td class="px-4 py-2 border">{{ movie.title }}</td>
+            <td class="px-4 py-2 border">{{ movie.category }}</td>
+            <td class="px-4 py-2 border"></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
 </template>
 
 <script>
-// import { useRouter } from "vue-router";
-// import { ref, onMounted } from "vue";
-// import axios from "axios";
-// import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+import { ref, onMounted } from "vue";
+import axios from "axios";
 
 export default {
   name: "MovieList",
-  // setup() {
-  //   const router = useRouter();
-  //   const movies = ref([]);
-  //   const token = localStorage.getItem("authToken");
+  setup() {
+    const router = useRouter();
+    const movies = ref([]);
+    const token = localStorage.getItem("authToken");
 
-  //   if (!token) {
-  //     router.push({ name: "Login" });
-  //   }
+    if (!token) {
+      router.push({ name: "Login" });
+    }
 
-  // },
+    const getMovies = async () => {
+      try {
+        const response = await axios.get(
+          "https://kamaji2.dev.netbuilder.it/00900000/_categories"
+        );
+        movies.value = response.data;
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    onMounted(() => {
+      getMovies();
+    });
+    return {
+      movies,
+    };
+  },
 };
-
-//     const getMovies = async => {
-//       try {
-//         const response = await axios.get('https://kamaji2.dev.netbuilder.it/00900000/_categories'), {
-//           headers: {
-//             Authorization: `Bearer ${token}`,
-//           }
-//     }
-//     movies.value = response.data;
-//   }
-// };
 </script>
+
 <style scoped>
 .movie-list {
   display: grid;
