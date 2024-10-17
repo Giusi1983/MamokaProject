@@ -66,15 +66,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.movie-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-.movie-table {
-  border: 1px solid #ddd;
-  padding: 1rem;
-}
-</style>
